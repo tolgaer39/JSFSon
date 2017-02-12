@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<!-- Expression Language veya outputtext kullanabilirim herhangi bir veri basarken... -->
+<h:outputText value="Merhaba Dunya"/>
+
+<h:outputText value="#{outputBean.plainText}"/>
+
+<!-- varsayilan olarak escape true dur ve guvenlik saglar... 
+	 false yaparsak da inputtext i html kodu olarak algilar. -->
+<p><h:outputText value="#{outputBean.htmlText}"/></p>
+<p><h:outputText value="#{outputBean.htmlText}" escape="false"/></p>
+<p>#{outputBean.htmlText}</p>
+
+		<p>
+		<h:outputFormat value="Name : {0} Surname : {1}">
+			<f:param value="Tolga"/>
+			<f:param value="Ergun"/>
+		</h:outputFormat>
+		</p>
+
+		<p>
+		<h:graphicImage value="java.png"/>
+		</p>
+		
+		<p>
+		<h:graphicImage value="../resources/images/javacup.png"/>
+		</p>
+
+		<!-- calismadi header ile alakali bir sikinti oluyor... -->
+		<p>
+		<h:graphicImage library="images" value="duke.png"/>
+		</p>
+
+</html>
